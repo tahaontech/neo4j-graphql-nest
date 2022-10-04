@@ -12,6 +12,11 @@
 ## Installation
 
 ```bash
+$ docker run --publish=7474:7474 --publish=7687:7687 neo4j
+```
+neo4j: localhost:7474 user:neo4j pass: neo4j
+
+```bash
 $ npm install
 ```
 
