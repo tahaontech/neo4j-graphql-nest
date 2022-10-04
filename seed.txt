@@ -1,0 +1,38 @@
+CREATE ( TheMartix:Movie{id: "49215650", title:"The Martix", year:1999})
+CREATE ( AFewGoodMen:Movie{id: "1327952692", title:"A Few Good Men", year:1992})
+CREATE ( TopGun:Movie{id: "772433904", title:"Top Gun", year:1986})
+CREATE ( Keanu:Actor{id: "568704004", name:"Keanu Reeves", born:1964})
+CREATE ( Carrie:Actor{id: "127182396", name:"Carrie-Anne Moss", born:1967})
+CREATE ( Laurence:Actor{id: "1348005208", name:"Laurence Fishburne", born:1961})
+CREATE ( Hugo:Actor{id: "1031743152", name:"Hugo Weaving", born:1960})
+CREATE (TomC:Actor {id: "89366464", name:'Tom Cruise', born:1962})
+CREATE (JackN:Actor {id: "1399052138", name:'Jack Nicholson', born:1937})
+CREATE (DemiM:Actor {id: "342998744", name:'Demi Moore', born:1962})
+CREATE (KevinB:Actor {id: "681007250", name:'Kevin Bacon', born:1958})
+CREATE (RiverP:Actor {id: "541234804", name:'River Phoenix', born:1970})
+CREATE (CoreyF:Actor {id: "933037160", name:'Corey Feldman', born:1971})
+CREATE (WilW:Actor {id: "305503286", name:'Wil Wheaton', born:1972})
+CREATE (JohnC:Actor {id: "1399418394", name:'John Cusack', born:1966})
+CREATE (KellyM:Actor {id: "169118708", name:'Kelly McGillis', born:1957})
+CREATE (ValK:Actor {id: "898654878",name:'Val Kilmer', born:1959})
+CREATE
+  (Keanu)-[:ACTED_IN] ->(TheMatrix),
+  (Carrie)-[:ACTED_IN]->(TheMatrix),
+  (Laurence)-[:ACTED_IN]->(TheMatrix),
+  (Hugo)-[:ACTED_IN]->(TheMatrix),
+  (TomC)-[:ACTED_IN ]->(AFewGoodMen),
+  (JackN)-[:ACTED_IN ]->(AFewGoodMen),
+  (DemiM)-[:ACTED_IN ]->(AFewGoodMen),
+  (KevinB)-[:ACTED_IN]->(AFewGoodMen),
+  (TomC)-[:ACTED_IN]->(TopGun),
+  (KellyM)-[:ACTED_IN]->(TopGun)
+CREATE
+ (TheMatrix)-[:HAS]->(Keanu),
+ (TheMatrix)-[:HAS]->(Carrie), 
+ (TheMatrix)-[:HAS]->(Laurence), 
+ (TheMatrix)-[:HAS]->(Hugo),
+ (AFewGoodMen)-[:HAS]->(TomC),  
+ (AFewGoodMen)-[:HAS]->(JackN),  
+ (AFewGoodMen)-[:HAS]->(KevinB), 
+ (TopGun)-[:HAS]->(TomC),  
+ (TopGun)-[:HAS]->(KellyM)
